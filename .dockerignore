@@ -1,2 +1,5 @@
-Readme.MD
-tcd-app
+node_modules
+build
+.dockerignore
+Dockerfile
+Dockerfile.prod
