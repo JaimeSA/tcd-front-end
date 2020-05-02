@@ -1,21 +1,25 @@
-import React from "react";
-import logo from "./logo.svg";
+import React, { useState, useEffect } from "react";
 import "./App.css";
+import logo from "./ecs-logo.png";
+const publicIp = require("public-ip");
 
 function App() {
+  const [ip, setIp] = useState("unknown");
+
+  useEffect(() => {
+    async function getIp() {
+      const ip = await publicIp.v4();
+      setIp(ip);
+    }
+    getIp();
+  }, []);
+
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>Jaime's site coming soon...</p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h2>Elastic Container Service Lab</h2>
+        <p>This application runs on IP: {ip}</p>
       </header>
     </div>
   );
