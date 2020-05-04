@@ -14,3 +14,5 @@ FROM nginx:alpine
 COPY --from=builder /usr/src/app/build /usr/share/nginx/html
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
+
+#Run> docker run -p 3002:80 -it tcd/front-end
