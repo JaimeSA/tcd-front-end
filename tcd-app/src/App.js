@@ -1,6 +1,5 @@
 import "./App.css";
 import logo from "./ecs-logo.png";
-const publicIp = require("public-ip");
 
 function App() {
   return (
